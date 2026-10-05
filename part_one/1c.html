@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <p id="MyPara"></p>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const div=(
+        <div>
+          <h1>Cotton socks</h1> 
+          <p>Price : 10$</p>
+          <button>Add to cart</button>
+        </div>
+      );
+
+      const cost=26;
+      console.log(cost)
+      const productCost=`the product cost is ${cost}`;
+
+      //const productCost2=<p>the product cost is {cost}</p>;
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div);
+      
+      //ReactDOM.createRoot(container).render();  // we don't need to declare the ReactDOM...... part. first one work for both
+      //ReactDOM.createRoot(container).render(productCost2);// this overrides the previous render. so we can only see the last render. if we want to see both, we need to use different container for each render.
+      
+      const para=document.querySelector('#MyPara');
+      ReactDOM.createRoot(para).render(productCost);
+    </script>
+  </body>
+</html>
